@@ -1,8 +1,10 @@
-const express = require("express");
+import express from "express";
+import Service from "./helper/service";
 
 const app = express();
-new (require("./helper/service"))(app);
+new Service(app);
 
-app.listen(21525, () => {
-    console.log(`Server is now listening on port PORT...`);
+const port = 21525;
+app.listen(port, () => {
+    console.log(`Server is now listening on port ${port}...`);
 });
